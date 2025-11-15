@@ -1,16 +1,17 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import ImageComparison from '$lib/components/ImageComparison.svelte';
 	import ScrollReveal from '$lib/components/ScrollReveal.svelte';
 	
-	// Image paths
+	// Image paths — prepend base for subdirectory deployment
 	const images = {
-		cowLithograph: '/chicago-fire/cow-lithograph.jpg',
-		courthouseRuins: '/chicago-fire/courthouse-ruins.jpg',
-		courthouseNow: '/chicago-fire/courthouse-now.jpg',
-		waterTowerAfter: '/chicago-fire/water-tower-after.jpg',
-		waterTowerNow: '/chicago-fire/water-tower-now.jpg',
-		methodistSketch: '/chicago-fire/methodist-church-sketch.jpg',
-		methodistNow: '/chicago-fire/methodist-church-now.jpg'
+		cowLithograph: `${base}/chicago-fire/cow-lithograph.jpg`,
+		courthouseRuins: `${base}/chicago-fire/courthouse-ruins.jpg`,
+		courthouseNow: `${base}/chicago-fire/courthouse-now.jpg`,
+		waterTowerAfter: `${base}/chicago-fire/water-tower-after.jpg`,
+		waterTowerNow: `${base}/chicago-fire/water-tower-now.jpg`,
+		methodistSketch: `${base}/chicago-fire/methodist-church-sketch.jpg`,
+		methodistNow: `${base}/chicago-fire/methodist-church-now.jpg`
 	};
 	
 	let scrollProgress = $state(0);
@@ -73,11 +74,9 @@
 		<ScrollReveal delay={100}>
 			<div class="section-content">
 				<h2>The Scale of Destruction</h2>
-				<div class="map-wrapper">
-					<div class="luna-embed-container">
-						<img src="/chicago-fire/map-burnt-district.jpg" alt="Map of the Burnt District, ca. 1871" />
-
-                    </div>
+			<div class="map-wrapper">
+				<div class="luna-embed-container">
+					<img src="{base}/chicago-fire/map-burnt-district.jpg" alt="Map of the Burnt District, ca. 1871" />                    </div>
 					<div class="map-caption">
 						<p class="caption-title">Map of the Burnt District, ca. 1871</p>
 						<p class="caption-text">
@@ -116,7 +115,7 @@
 				</div>
 				<div class="image-column">
 					<div class="image-wrapper">
-						<img src="/chicago-fire/cow-lithograph.jpg" alt="Satirical lithograph showing Mrs. O'Leary's cow kicking over a lantern" />
+						<img src="{base}/chicago-fire/cow-lithograph.jpg" alt="Satirical lithograph showing Mrs. O'Leary's cow kicking over a lantern" />
 						<p class="image-credit">Kellogg & Buckeley, ca. 1872</p>
 					</div>
 				</div>
@@ -136,8 +135,8 @@
 				</p>
 				<div class="comparison-wrapper">
 					<ImageComparison 
-						beforeImage="/chicago-fire/courthouse-ruins.jpg"
-						afterImage="/chicago-fire/courthouse-now.jpg"
+						beforeImage="{base}/chicago-fire/courthouse-ruins.jpg"
+						afterImage="{base}/chicago-fire/courthouse-now.jpg"
 						beforeLabel="1871 - Ruins"
 						afterLabel="Today"
 						alt="Court House location comparison"
@@ -162,8 +161,8 @@
 				</p>
 				<div class="comparison-wrapper">
 					<ImageComparison 
-						beforeImage="/chicago-fire/water-tower-after.jpg"
-						afterImage="/chicago-fire/water-tower-now.jpg"
+						beforeImage="{base}/chicago-fire/water-tower-after.jpg"
+						afterImage="{base}/chicago-fire/water-tower-now.jpg"
 						beforeLabel="Post-Fire 1871"
 						afterLabel="Magnificent Mile Today"
 						alt="Water Tower comparison"
@@ -185,7 +184,7 @@
 				<div class="split-layout reverse">
 					<div class="image-column">
 					<div class="image-wrapper sketch-wrapper">
-						<img src="/chicago-fire/methodist-church-sketch.jpg" alt="Sketch of preaching at Methodist Church corner of LaSalle and Chicago Avenue" />
+						<img src="{base}/chicago-fire/methodist-church-sketch.jpg" alt="Sketch of preaching at Methodist Church corner of LaSalle and Chicago Avenue" />
 							<p class="image-credit">Alfred R. Waud, October 15, 1871</p>
 						</div>
 					</div>
@@ -203,8 +202,8 @@
 				</div>
 				<div class="comparison-wrapper" style="margin-top: 3rem;">
 					<ImageComparison 
-						beforeImage="/chicago-fire/methodist-church-sketch.jpg"
-						afterImage="/chicago-fire/methodist-church-now.jpg"
+						beforeImage="{base}/chicago-fire/methodist-church-sketch.jpg"
+						afterImage="{base}/chicago-fire/methodist-church-now.jpg"
 						beforeLabel="Methodist Church, 1871"
 						afterLabel="Moody Bible Institute"
 						alt="Methodist Church location transformation"
@@ -224,7 +223,7 @@
 					1900s-era civic pride that culminated in the 1893 World's Columbian Exposition.
 				</p>
 				<div class="image-wrapper">
-					<img src="/chicago-fire/court-of-honor-1893.jpg" alt="The Court of Honor at World's Columbian Exposition, 1893" />
+					<img src="{base}/chicago-fire/court-of-honor-1893.jpg" alt="The Court of Honor at World's Columbian Exposition, 1893" />
 					<p class="image-credit">Chicago History Museum, ICHi-061668; J. Maul, photographer</p>
 				</div>
 				<!-- <div class="map-caption" style="margin-top:1rem;">

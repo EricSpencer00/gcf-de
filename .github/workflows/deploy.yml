@@ -1,0 +1,47 @@
+name: Deploy Static Site to GitHub Pages
+
+on:
+  push:
+    branches: ["main", "master"]
+
+jobs:
+  build:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: gcf
+        run: npm install
+
+      - name: Build SvelteKit (static)
+        working-directory: gcf
+        run: npm run build
+
+      - name: Debug — List build output
+        run: ls -la gcf/.svelte-kit/output/client/ || echo "client dir not found"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: gcf/.svelte-kit/output/client
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

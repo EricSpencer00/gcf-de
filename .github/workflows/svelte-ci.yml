@@ -22,7 +22,7 @@ jobs:
           # cache intentionally omitted because the project lockfile lives in the 'gcf' subfolder
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
         working-directory: gcf
 
       - name: Build (SvelteKit)

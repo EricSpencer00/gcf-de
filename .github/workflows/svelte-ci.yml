@@ -1,0 +1,40 @@
+name: CI — Build SvelteKit
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          # cache intentionally omitted because the project lockfile lives in the 'gcf' subfolder
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: gcf
+
+      - name: Build (SvelteKit)
+        run: |
+          npm run build --if-present
+        working-directory: gcf
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: svelte-build
+          path: |
+            gcf/.svelte-kit
+            gcf/build
+            gcf/static

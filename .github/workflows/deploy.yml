@@ -35,12 +35,12 @@ jobs:
         run: npm run build
 
       - name: Debug — List build output
-        run: ls -la gcf/.svelte-kit/output/client/ || echo "client dir not found"
+        run: ls -la gcf/build/ || echo "build dir not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: gcf/.svelte-kit/output/client
+          path: gcf/build
 
       - name: Deploy to GitHub Pages
         id: deployment

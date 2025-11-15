@@ -2,16 +2,15 @@
 	import ImageComparison from '$lib/components/ImageComparison.svelte';
 	import ScrollReveal from '$lib/components/ScrollReveal.svelte';
 	
-	// Image paths - update these when you add your images
+	// Image paths
 	const images = {
-		map: '/src/lib/assets/chicago-fire/map-burnt-district.jpg',
-		cowLithograph: '/src/lib/assets/chicago-fire/cow-lithograph.jpg',
-		courthouseRuins: '/src/lib/assets/chicago-fire/courthouse-ruins.jpg',
-		courthouseNow: '/src/lib/assets/chicago-fire/courthouse-now.jpg',
-		waterTowerAfter: '/src/lib/assets/chicago-fire/water-tower-after.jpg',
-		waterTowerNow: '/src/lib/assets/chicago-fire/water-tower-now.jpg',
-		methodistSketch: '/src/lib/assets/chicago-fire/methodist-church-sketch.jpg',
-		methodistNow: '/src/lib/assets/chicago-fire/methodist-church-now.jpg'
+		cowLithograph: '/chicago-fire/cow-lithograph.jpg',
+		courthouseRuins: '/chicago-fire/courthouse-ruins.jpg',
+		courthouseNow: '/chicago-fire/courthouse-now.jpg',
+		waterTowerAfter: '/chicago-fire/water-tower-after.jpg',
+		waterTowerNow: '/chicago-fire/water-tower-now.jpg',
+		methodistSketch: '/chicago-fire/methodist-church-sketch.jpg',
+		methodistNow: '/chicago-fire/methodist-church-now.jpg'
 	};
 	
 	let scrollProgress = $state(0);
@@ -74,8 +73,11 @@
 		<ScrollReveal delay={100}>
 			<div class="section-content">
 				<h2>The Scale of Destruction</h2>
-				<div class="image-wrapper map-wrapper">
-					<img src={images.map} alt="Map of Chicago showing the burnt district, circa 1871" class="historical-map" />
+				<div class="map-wrapper">
+					<div class="luna-embed-container">
+						<img src="/chicago-fire/map-burnt-district.jpg" alt="Map of the Burnt District, ca. 1871" />
+
+                    </div>
 					<div class="map-caption">
 						<p class="caption-title">Map of the Burnt District, ca. 1871</p>
 						<p class="caption-text">
@@ -114,7 +116,7 @@
 				</div>
 				<div class="image-column">
 					<div class="image-wrapper">
-						<img src={images.cowLithograph} alt="Satirical lithograph showing Mrs. O'Leary's cow kicking over a lantern" />
+						<img src="/chicago-fire/cow-lithograph.jpg" alt="Satirical lithograph showing Mrs. O'Leary's cow kicking over a lantern" />
 						<p class="image-credit">Kellogg & Buckeley, ca. 1872</p>
 					</div>
 				</div>
@@ -134,8 +136,8 @@
 				</p>
 				<div class="comparison-wrapper">
 					<ImageComparison 
-						beforeImage={images.courthouseRuins}
-						afterImage={images.courthouseNow}
+						beforeImage="/chicago-fire/courthouse-ruins.jpg"
+						afterImage="/chicago-fire/courthouse-now.jpg"
 						beforeLabel="1871 - Ruins"
 						afterLabel="Today"
 						alt="Court House location comparison"
@@ -160,8 +162,8 @@
 				</p>
 				<div class="comparison-wrapper">
 					<ImageComparison 
-						beforeImage={images.waterTowerAfter}
-						afterImage={images.waterTowerNow}
+						beforeImage="/chicago-fire/water-tower-after.jpg"
+						afterImage="/chicago-fire/water-tower-now.jpg"
 						beforeLabel="Post-Fire 1871"
 						afterLabel="Magnificent Mile Today"
 						alt="Water Tower comparison"
@@ -182,8 +184,8 @@
 				<h2>Faith and Rebuilding</h2>
 				<div class="split-layout reverse">
 					<div class="image-column">
-						<div class="image-wrapper sketch-wrapper">
-							<img src={images.methodistSketch} alt="Sketch of preaching at Methodist Church corner of LaSalle and Chicago Avenue" />
+					<div class="image-wrapper sketch-wrapper">
+						<img src="/chicago-fire/methodist-church-sketch.jpg" alt="Sketch of preaching at Methodist Church corner of LaSalle and Chicago Avenue" />
 							<p class="image-credit">Alfred R. Waud, October 15, 1871</p>
 						</div>
 					</div>
@@ -201,13 +203,34 @@
 				</div>
 				<div class="comparison-wrapper" style="margin-top: 3rem;">
 					<ImageComparison 
-						beforeImage={images.methodistSketch}
-						afterImage={images.methodistNow}
+						beforeImage="/chicago-fire/methodist-church-sketch.jpg"
+						afterImage="/chicago-fire/methodist-church-now.jpg"
 						beforeLabel="Methodist Church, 1871"
 						afterLabel="Moody Bible Institute"
 						alt="Methodist Church location transformation"
 					/>
 				</div>
+			</div>
+		</ScrollReveal>
+	</section>
+
+	<!-- Rebuilding & World's Columbian Exposition -->
+	<section class="content-section rebuild-section">
+		<ScrollReveal delay={320}>
+			<div class="section-content">
+				<h2>Rebuilding and the 1893 World's Columbian Exposition</h2>
+				<p class="section-intro">
+					Chicago's rapid recovery after the Fire set the stage for the city's spectacular rebirth and the
+					1900s-era civic pride that culminated in the 1893 World's Columbian Exposition.
+				</p>
+				<div class="image-wrapper">
+					<img src="/chicago-fire/court-of-honor-1893.jpg" alt="The Court of Honor at World's Columbian Exposition, 1893" />
+					<p class="image-credit">Chicago History Museum, ICHi-061668; J. Maul, photographer</p>
+				</div>
+				<!-- <div class="map-caption" style="margin-top:1rem;">
+					<p class="caption-title">The Court of Honor at World's Columbian Exposition</p>
+					<p class="caption-text">Looking east toward Grand Basin and the Court of Honor at the World's Columbian Exposition, Chicago, Illinois, 1893. Photographic print, 8 x 10 in.</p>
+				</div> -->
 			</div>
 		</ScrollReveal>
 	</section>
@@ -219,26 +242,22 @@
 				<h2>Sources & Further Reading</h2>
 				<div class="bibliography">
 					<div class="bib-entry">
-						<p class="bib-source">Chicago History Museum</p>
-						<p>"View of the Chicago Avenue Water Tower and pumping station after the Great Fire of 1871, Chicago, Illinois." 
-						Photograph, post-1871. Identifier: ICHi-002792.</p>
+						<p>"View of the Chicago Avenue Water Tower and pumping station after the Great Fire of 1871, Chicago, Illinois." Photograph, post-1871. Chicago History Museum (Identifier: ICHi-002792). Accessed November 14, 2025. <a href="https://images.chicagohistory.org/asset/3869/#:~:text=ICHi%2D002792,Extent%3A%2011%20x%2013.5%20in." target="_blank">View Source</a></p>
 					</div>
 					<div class="bib-entry">
-						<p class="bib-source">Chicago History Museum</p>
-						<p>"Court House ruins after the fire." Photograph, 1871. Identifier: ICHi-176626.</p>
+						<p>"Court House ruins after the fire." Photograph, 1871. Chicago History Museum (Identifier: ICHi-176626). Accessed November 13, 2025. <a href="https://images.chicagohistory.org/cdn/chicagohistorymuseum/previews/647/4ac4b22081d5ba3470148d009026d361/5/4acc4557ce33f4b9dd9c7fcf2bcd0a4d/193850.jpg" target="_blank">View Source</a></p>
 					</div>
 					<div class="bib-entry">
-						<p class="bib-source">University of Chicago Library Map Collection</p>
-						<p>"Map of Chicago showing the burnt district." ca. 1871.</p>
+						<p>"Map of Chicago showing the burnt district." [ca. 1871]. The University of Chicago Library Map Collection. Accessed November 13, 2025. <a href="https://luna.lib.uchicago.edu/luna/servlet/detail/UCHICAGO~2~2~383~1231861:Map-of-Chicago-showing-the-burnt-di" target="_blank">View Source</a></p>
 					</div>
 					<div class="bib-entry">
-						<p class="bib-source">Chicago History Museum</p>
-						<p>Kellogg & Buckeley. "The Cause of the Great Chicago Fire Oct. 9th 1871." Lithograph, ca. 1872.</p>
+						<p>Kellogg & Buckeley. "The Cause of the Great Chicago Fire Oct. 9th 1871." Lithograph, ca. 1872. Chicago History Museum. Accessed November 13, 2025. <a href="https://greatchicagofire.org/item/ichi-34703/" target="_blank">View Source</a></p>
 					</div>
 					<div class="bib-entry">
-						<p class="bib-source">Chicago History Museum</p>
-						<p>Waud, Alfred R. "Preaching at the Methodist church cor. of LaSalle St. and Chicago Avenue Sunday Oct 15th." 
-						Pencil and Chalk Drawing, 1871. Identifier: ichi-64139.</p>
+						<p>"The Court of Honor at World's Columbian Exposition" [ca. 1893]. Chicago History Museum (Identifier: ICHi-061668). Accessed November 14, 2025. <a href="https://images.chicagohistory.org/cdn/chicagohistorymuseum/previews/334/65734f507062c549741d27855b7b4ee1/5/c4559e476cd3ad81e44b230bbf0ce666/99920.jpg" target="_blank">View Source</a></p>
+					</div>
+					<div class="bib-entry">
+						<p>Waud, Alfred R. "Preaching at the Methodist church cor. of LaSalle St. and Chicago Avenue Sunday Oct 15th." Pencil and Chalk Drawing, 1871. Chicago History Museum (Identifier: ichi-64139). Accessed November 13, 2025. <a href="https://greatchicagofire.org/item/ichi-64139/" target="_blank">View Source</a></p>
 					</div>
 				</div>
 				<div class="author-credit">
@@ -451,12 +470,6 @@
 		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 	}
 
-	.historical-map {
-		border: 4px solid #3a2a1a;
-		background: #1a1410;
-		padding: 1rem;
-	}
-
 	.sketch-wrapper img {
 		border: 3px solid #4a4a4a;
 		background: #f8f8f8;
@@ -471,11 +484,30 @@
 		text-align: center;
 	}
 
-	/* Map Caption */
+	.map-wrapper {
+		position: relative;
+		margin: 2rem 0;
+	}
+
+	.luna-embed-container {
+		position: relative;
+		width: 100%;
+		margin-bottom: 2rem;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+	}
+
+	.luna-embed-container iframe {
+		display: block;
+		width: 100%;
+		border: none;
+	}
+
 	.map-caption {
 		background: rgba(26, 20, 16, 0.8);
 		padding: 2rem;
-		margin-top: 2rem;
+		margin-top: 0;
 		border-left: 4px solid #d97706;
 		backdrop-filter: blur(10px);
 	}
@@ -596,5 +628,15 @@
 	/* Intro Section Styling */
 	.intro-section {
 		background: radial-gradient(ellipse at top, rgba(217, 119, 6, 0.05), transparent 70%);
+	}
+
+	:global(a[target="_blank"]) {
+		color: #dc2626; /* Matches the exhibit's red/orange theme */
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	:global(a[target="_blank"]:hover) {
+		text-decoration: underline;
 	}
 </style>

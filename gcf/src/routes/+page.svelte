@@ -56,7 +56,6 @@
 			<div class="section-content">
 				<section>
 					<h2>The Inferno That Changed Everything</h2>
-						<h2>A Scapegoat for the City</h2>
 						<p>
 							The immediate cause of the Great Chicago Fire remains uncertain. Contemporary reports
 							rumored that the blaze began in the O'Leary barn after a lantern was knocked over; popular

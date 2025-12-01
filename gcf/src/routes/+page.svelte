@@ -54,17 +54,22 @@
 	<section class="content-section intro-section">
 		<ScrollReveal>
 			<div class="section-content">
-				<h2>The Inferno That Changed Everything</h2>
-				<p class="lead-text">
-					The Great Chicago Fire was a transformative tragedy in 1871 that shaped the then expanding 
-					hub of trade into a better-than-before city after restorative efforts. The start of Chicago 
-					was rapid, which meant cheap building materials like wood. This, combined with the elements 
-					of October 9, 1871 made a small fire turn into a multi-mile inferno.
-				</p>
-				<p>
-					In this exhibit I showcase the immediate effects of the fire and the then and now of Chicago 
-					with examples of primary source photographs and current Google Earth reenactments of the same locations.
-				</p>
+				<section>
+					<h2>The Inferno That Changed Everything</h2>
+						<h2>A Scapegoat for the City</h2>
+						<p>
+							The immediate cause of the Great Chicago Fire remains uncertain. Contemporary reports
+							rumored that the blaze began in the O'Leary barn after a lantern was knocked over; popular
+							accounts later blamed Mrs. Catherine O'Leary's cow. Subsequent historical research has
+							shown the "cow" story to be a myth that circulated amid widespread anti-immigrant and
+							anti-Irish sentiment in late-19th-century Chicago 
+						</p>
+						<p>
+							Cartoonists and lithographers of the period—such as Kellogg & Buckley—produced satirical
+							imagery that helped popularize an explanatory but misleading narrative. Scholars note that
+							scapegoating of an Irish Catholic immigrant must be viewed in the context of prevailing
+						</p>
+				</section>
 			</div>
 		</ScrollReveal>
 	</section>
@@ -221,6 +226,11 @@
 				<p class="section-intro">
 					Chicago's rapid recovery after the Fire set the stage for the city's spectacular rebirth and the
 					1900s-era civic pride that culminated in the 1893 World's Columbian Exposition.
+				</p>
+				<p>
+					The World's Columbian Exposition (1893) highlighted Chicago's rebuilt civic center, monumental
+					architecture, and technological achievements. The fair created new strides in architecture and 
+					urban design while showing Chicago's emergence as a major American city.
 				</p>
 				<div class="image-wrapper">
 					<img src="{base}/chicago-fire/court-of-honor-1893.jpg" alt="The Court of Honor at World's Columbian Exposition, 1893" />

@@ -58,13 +58,12 @@
 					<h2>The Inferno That Changed Everything</h2>
 						<p>
 							The immediate cause of the Great Chicago Fire remains uncertain. Contemporary reports
-							rumored that the blaze began in the O'Leary barn after a lantern was knocked over; popular
-							accounts later blamed Mrs. Catherine O'Leary's cow. Subsequent historical research has
-							shown the "cow" story to be a myth that circulated amid widespread anti-immigrant and
-							anti-Irish sentiment in late-19th-century Chicago 
+							rumored that the blaze began in the O'Leary barn after a lantern was knocked over and popular
+							accounts later blamed Mrs. Catherine O'Leary's cow due to the fact that no other plausible
+							source was provided.
 						</p>
 						<p>
-							Cartoonists and lithographers of the period—such as Kellogg & Buckley—produced satirical
+							Cartoonists and lithographers of the period, such as Kellogg & Buckley, produced satirical
 							imagery that helped popularize an explanatory but misleading narrative. Scholars note that
 							scapegoating of an Irish Catholic immigrant must be viewed in the context of prevailing
 						</p>
@@ -235,10 +234,6 @@
 					<img src="{base}/chicago-fire/court-of-honor-1893.jpg" alt="The Court of Honor at World's Columbian Exposition, 1893" />
 					<p class="image-credit">Chicago History Museum, ICHi-061668; J. Maul, photographer</p>
 				</div>
-				<!-- <div class="map-caption" style="margin-top:1rem;">
-					<p class="caption-title">The Court of Honor at World's Columbian Exposition</p>
-					<p class="caption-text">Looking east toward Grand Basin and the Court of Honor at the World's Columbian Exposition, Chicago, Illinois, 1893. Photographic print, 8 x 10 in.</p>
-				</div> -->
 			</div>
 		</ScrollReveal>
 	</section>

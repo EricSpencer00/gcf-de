@@ -2,6 +2,11 @@
 	import { base } from '$app/paths';
 	import ImageComparison from '$lib/components/ImageComparison.svelte';
 	import ScrollReveal from '$lib/components/ScrollReveal.svelte';
+	const pageTitle = 'Great Chicago Fire of 1871 — Digital Exhibit | Eric Spencer';
+	const description =
+		"Explore the Great Chicago Fire of 1871 through historical maps, photographs, and then-and-now comparisons of the city's destruction and rebuilding.";
+	const canonical = 'https://ericspencer.us/gcf-de/';
+	const previewImage = `${canonical}chicago-fire/courthouse-ruins.jpg`;
 	
 	// Image paths — prepend base for subdirectory deployment
 	const images = {
@@ -22,6 +27,28 @@
 		scrollProgress = (winScroll / height) * 100;
 	}
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="description" content={description} />
+	<meta name="author" content="Eric Spencer" />
+	<meta name="robots" content="index, follow, max-image-preview:large" />
+	<link rel="canonical" href={canonical} />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content={canonical} />
+	<meta property="og:image" content={previewImage} />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:image:width" content="1024" />
+	<meta property="og:image:height" content="821" />
+	<meta property="og:image:alt" content="Chicago Court House ruins after the Great Fire of 1871" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={pageTitle} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={previewImage} />
+	<meta name="twitter:image:alt" content="Chicago Court House ruins after the Great Fire of 1871" />
+</svelte:head>
 
 <svelte:window onscroll={handleScroll} />
 
